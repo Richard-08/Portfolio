@@ -1,0 +1,25 @@
+/* -----------------------Project placeholders-------------------- */
+
+%background {
+  &--black {
+    background: black;
+  }
+
+  &--white {
+    background: white;
+  }
+}
+
+%scroll-optimization {
+  transform: translate3d(0, 0, 0);
+  will-change: scroll-position;
+}
+
+%overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  @include size(100%, 100%);
+}

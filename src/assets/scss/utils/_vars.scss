@@ -1,0 +1,70 @@
+/* Vars:
+   ========================================================================== */
+
+/* --------Diagonal containers parametrs------- */
+
+$width: 100vw;
+$full-width: 100vw;
+$angle: -11deg;
+
+/*-----------------
+  Magic Number Alert:
+  
+  the 0.09719 is calculated by this formula:
+  tan(11°) / 2
+  11° is the current skewY value.
+  ------------------*/
+
+$magic-number: 0.09719;
+$skew-padding: $width * $magic-number;
+$clip-padding: $full-width * $magic-number;
+
+/* Transitions */
+
+// Font
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap");
+$mainFont: "Raleway", sans-serif;
+
+// Size
+$mainFontColor: #2c3e50;
+$mainFontSize: 18px;
+$mainFontWeight: 400;
+$mainLineHeight: 1.4;
+
+$desktopWidth: 1280px;
+$smDesktopWidth: 1024px;
+$tableWidth: 768px;
+$smTableWidth: 640px;
+$phoneWidth: 480px;
+$smPhoneWidth: 320px;
+
+/*
+ All colors taken from:
+*/
+
+/* ---------------------Background colors---------------------- */
+
+$main-bg: #fff;
+$bg: linear-gradient(45deg, #654ea3, #eaafc8);
+$secondary: #41b883;
+
+// Main color
+$default-color: #ffffff;
+$primary-color: #444ce0;
+$success-color: #26de81;
+$danger-color: #fc5c65;
+$warning-color: #fed330;
+$light-color: #999999;
+$purple-color: #8854d0;
+
+// Neutral Color
+$neutral-primary: #303133;
+$neutral-regular: #606266;
+$neutral-secondary: #909399;
+$neutral-placeholder: #c0c4cc;
+
+// Border Color
+$border-base: #dcdfe6;
+$border-light: #e4e7ed;
+$border-lighter: #ebeef5;
+$border-lightex: #f2f6fc;

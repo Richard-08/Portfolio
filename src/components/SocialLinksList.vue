@@ -36,7 +36,7 @@ export default {
 .social-links {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   position: relative;
   z-index: 10;
   margin-bottom: 20px;

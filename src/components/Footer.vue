@@ -46,7 +46,7 @@ export default {
   &__nav-list {
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
     padding: 20px 0;
 
     @include media(570px) {

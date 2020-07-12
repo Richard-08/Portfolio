@@ -27,6 +27,18 @@ export default {};
   &__title {
     text-transform: uppercase;
     margin-bottom: 25px;
+
+    animation: leftAppear 1s linear;
+
+    @keyframes leftAppear {
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
   }
 
   &__text {
@@ -34,6 +46,17 @@ export default {};
     color: #fff;
     text-transform: uppercase;
     padding: 10px;
+    animation: rightAppear 1s linear;
+
+    @keyframes rightAppear {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
 
     span {
       color: #41b883;

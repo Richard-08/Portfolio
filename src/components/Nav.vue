@@ -53,17 +53,16 @@ export default {
       position: absolute;
       width: 80%;
       left: 50%;
-      translate: -50%;
       top: 30px;
       flex-direction: column;
-      transform: translateY(-50%) translateX(-50%) scale(0);
+      transform: translateY(-150%) translate(-50%);
       transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1);
       z-index: 9999;
     }
   }
 
   &__list.show {
-    transform: translateY(0) translateX(0) scale(1);
+    transform: translateY(0) translate(-50%);
   }
 }
 

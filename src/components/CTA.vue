@@ -5,14 +5,25 @@
 
       <form class="cta__form" @submit.prevent="onSubmit">
         <div class="cta__inputs">
-          <input type="text" class="cta__input-name" placeholder="Your Name" />
-          <input type="email" class="cta__input-email" placeholder="Email" />
+          <input
+            type="text"
+            class="cta__input-name"
+            placeholder="Your Name"
+            v-model="name"
+          />
+          <input
+            type="email"
+            class="cta__input-email"
+            placeholder="Email"
+            v-model="email"
+          />
         </div>
 
         <textarea
           rows="10"
           placeholder="Message"
           class="cta__message-textarea"
+          v-model="text"
         ></textarea>
 
         <button type="submit" class="cta__submit-btn">Submit</button>
@@ -25,18 +36,38 @@
 export default {
   data() {
     return {
-
-    }
-  }, 
+      name: "",
+      email: "",
+      text: "",
+    };
+  },
   methods: {
     onSubmit() {
-      
-    }
-  }
+      const feedback = {
+        name: this.name,
+        email: this.email,
+        text: this.text,
+      };
+
+      fetch("https://portfolio-app-abda8.firebaseio.com/feedback.json", {
+        method: "POST",
+        body: JSON.stringify(feedback),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      this.name = "";
+      this.email = "";
+      this.text = "";
+    },
+  },
 };
 </script>
 
 <style lang="scss">
+@import "../assets/scss/_stylebase.scss";
+
 .cta {
   &__title {
     text-align: center;
@@ -55,6 +86,10 @@ export default {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 25px;
+
+    @include media(650px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__input-name {

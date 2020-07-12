@@ -13,9 +13,15 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../assets/scss/_stylebase.scss";
+
 .social-links {
   &__item {
     margin-right: 30px;
+  }
+
+  &__item:last-child {
+    margin-right: 0;
   }
 
   &__link {

@@ -1,6 +1,6 @@
 <template>
-  <li class="nav__list-item">
-    <a :href="`#${link}`" class="nav__list-link">{{ link }}</a>
+  <li class="list-item">
+    <a :href="`#${link}`" class="list-link">{{ link }}</a>
   </li>
 </template>
 
@@ -11,60 +11,78 @@ export default {
 </script>
 
 <style lang="scss">
-.nav {
-  &__list-item {
-    margin-right: 40px;
-  }
+@import "../assets/scss/_stylebase.scss";
 
-  &__list-item:last-child {
-    margin-right: 0;
-  }
+.list-item {
+  margin-right: 40px;
+}
 
-  &__list-link {
-    display: block;
-    padding: 20px 0;
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: uppercase;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.5s ease;
-  }
+.list-item:last-child {
+  margin-right: 0;
+}
 
-  &__list-link::after,
-  &__list-link::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: #41b883;
-    transition: all 0.5s ease;
-  }
+.list-link {
+  display: block;
+  padding: 20px 0;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
 
-  &__list-link::after {
-    bottom: 0;
-    transform: translateY(5px);
-  }
-
-  &__list-link::before {
-    top: 0;
-    transform: translateY(100px);
-  }
-
-  &__list-link:hover::after,
-  &__list-link:hover::before {
-    transform: translateY(0);
-  }
-
-  &__list-link:hover {
-    color: #41b883;
+  @include media(650px) {
+    color: #fff;
   }
 }
 
-.nav.footer {
-  &__list-link {
-    
+.list-link::after,
+.list-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #41b883;
+  transition: all 0.5s ease;
+}
+
+.list-link::after {
+  bottom: 0;
+  transform: translateY(5px);
+}
+
+.list-link::before {
+  top: 0;
+  transform: translateY(100px);
+}
+
+.list-link:hover::after,
+.list-link:hover::before {
+  transform: translateY(0);
+}
+
+.list-link:hover {
+  color: #41b883;
+}
+
+.footer {
+  .list-link {
+    color: $mainFontColor;
+  }
+
+  .list-item {
+    @include media(570px) {
+      margin-right: 0;
+    }
+  }
+}
+
+.nav {
+  .list-item {
+    @include media(650px) {
+      margin-right: 0;
+    }
   }
 }
 </style>

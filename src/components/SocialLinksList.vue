@@ -31,6 +31,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../assets/scss/_stylebase.scss";
+
 .social-links {
   display: flex;
   align-items: center;
@@ -38,5 +40,10 @@ export default {
   position: relative;
   z-index: 10;
   margin-bottom: 20px;
+
+  @include media (570px) {
+    justify-content: center;
+    margin-bottom: 0;
+  }
 }
 </style>

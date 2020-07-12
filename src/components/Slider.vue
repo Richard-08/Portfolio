@@ -100,9 +100,15 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../assets/scss/_stylebase.scss";
+
 .agile {
   width: 80%;
   margin: 0 auto;
+
+  @include media(768px) {
+    width: 100%;
+  }
 
   &__actions {
     margin-top: 20px;
@@ -128,6 +134,10 @@ export default {
 
   &__dot {
     margin: 0 10px;
+
+    @include media(570px) {
+      margin: 0 8px;
+    }
   }
 
   &__dot button {
@@ -180,9 +190,20 @@ export default {
     pointer-events: none;
     transition: all 0.3s ease;
 
+    @include media(800px) {
+      bottom: 0;
+      height: 25%;
+      opacity: 1;
+      pointer-events: all;
+    }
+
     h3 {
       color: #fff;
       margin-bottom: 20px;
+
+      @include media(800px) {
+        margin-bottom: 5px;
+      }
     }
   }
 
@@ -219,6 +240,10 @@ export default {
   h3 {
     font-size: 32px;
     font-weight: 300;
+
+    @include media(800px) {
+      font-size: 24px;
+    }
   }
 }
 </style>

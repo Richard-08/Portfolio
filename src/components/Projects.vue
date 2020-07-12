@@ -41,10 +41,16 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../assets/scss/_stylebase.scss";
+
 .projects {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 30px;
   margin: 50px 0;
+
+  @include media(768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 </style>

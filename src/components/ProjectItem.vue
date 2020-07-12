@@ -26,15 +26,31 @@ export default {
 
   &:nth-child(1) {
     transform: translateY($skew-padding * 1.5);
+
+    @include media(768px) {
+      transform: translateY($skew-padding * 0.5);
+    }
   }
   &:nth-child(2) {
     transform: translateY($skew-padding * 1);
+
+    @include media(768px) {
+      transform: translateY($skew-padding * 0);
+    }
   }
   &:nth-child(3) {
     transform: translateY($skew-padding * 0.5);
+
+    @include media(768px) {
+      transform: translateY($skew-padding * 1);
+    }
   }
   &:nth-child(4) {
     transform: translateY($skew-padding * 0);
+
+    @include media(768px) {
+      transform: translateY($skew-padding * 0.5);
+    }
   }
 
   &__title {

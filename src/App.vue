@@ -4,11 +4,11 @@
 
     <Header />
 
-    <SkillsList v-bind:skills="skills" />
+    <SkillsList v-bind:skills="skills" ref="skills" />
 
-    <Portfolio />
+    <Portfolio ref="portfolio" />
 
-    <CTA />
+    <CTA ref="cta" />
 
     <Footer v-bind:links="links" />
   </div>
@@ -45,6 +45,9 @@ export default {
       ],
     };
   },
+  mounted() {
+    window.addEventListener("scroll", this.scrolling);
+  },
   components: {
     Header,
     Nav,
@@ -52,6 +55,18 @@ export default {
     Portfolio,
     CTA,
     Footer,
+  },
+  methods: {
+    scrolling() {
+      for (let key in this.$refs) {
+        let elementBoundary = this.$refs[key].$el.getBoundingClientRect();
+        let bottom = elementBoundary.bottom;
+
+        if (bottom / 2 <= window.innerHeight) {
+          this.$refs[key].$el.classList.add("active");
+        }
+      }
+    },
   },
 };
 </script>
@@ -82,6 +97,10 @@ button {
 }
 
 /* ----------------General styles--------------- */
+
+#app {
+  overflow: hidden;
+}
 
 img {
   max-width: 100%;

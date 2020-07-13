@@ -105,6 +105,7 @@ export default {
 .agile {
   width: 80%;
   margin: 0 auto;
+  @include animation(translateX(150%), 0.8s, ease, 0.8s);
 
   @include media(768px) {
     width: 100%;
@@ -245,5 +246,9 @@ export default {
       font-size: 24px;
     }
   }
+}
+
+.portfolio.active .agile {
+  transform: translateX(0);
 }
 </style>

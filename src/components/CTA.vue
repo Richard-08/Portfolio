@@ -69,9 +69,12 @@ export default {
 @import "../assets/scss/_stylebase.scss";
 
 .cta {
+  @include animation(translateX(100%) translateY(-50%), 0.8s, ease, 0s);
+
   &__title {
     text-align: center;
     color: #fff;
+    @include animation(translateX(-100%), 0.8s, ease, 1s);
   }
 
   &__form {
@@ -79,6 +82,8 @@ export default {
     flex-direction: column;
     align-items: center;
     padding: 40px 30px;
+
+    @include animation(translateX(150%), 0.8s, ease, 1.5s);
   }
 
   &__inputs {
@@ -143,6 +148,17 @@ export default {
       transform: translateY(0) translateX(0);
       box-shadow: none;
     }
+  }
+}
+
+.cta.active {
+  transform: translateX(0);
+  .cta__title {
+    transform: translateX(0);
+  }
+
+  .cta__form {
+    transform: translateX(0);
   }
 }
 </style>

@@ -25,14 +25,26 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../assets/scss/_stylebase.scss";
+
 .portfolio {
   text-align: center;
-  &__title, &__subtitle {
+  &__title,
+  &__subtitle {
     margin-bottom: 30px;
+    @include animation(translateX(-100%), 0.8s, ease, 0s);
   }
 
   &__subtitle {
     margin-top: 30px;
+    @include animation(translateX(-100%), 0.8s, ease, 1s);
+  }
+}
+
+.portfolio.active {
+  .portfolio__title,
+  .portfolio__subtitle {
+    transform: translateX(0);
   }
 }
 </style>

@@ -22,7 +22,8 @@ export default {
   padding: 10px;
   background-color: #ffffff;
   box-shadow: 0px 0px 10px 3px rgba($color: #000000, $alpha: 0.05);
-  transition: all 0.3s ease;
+  transition: all 0.8s ease 2s;
+  opacity: 0;
 
   &:nth-child(1) {
     transform: translateY($skew-padding * 1.5);
@@ -85,5 +86,9 @@ export default {
   &__link:hover {
     color: #fff;
   }
+}
+
+.portfolio.active .project {
+  opacity: 1;
 }
 </style>

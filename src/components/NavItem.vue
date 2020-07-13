@@ -15,6 +15,16 @@ export default {
 
 .list-item {
   margin-right: 40px;
+  animation: upAppear 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  @keyframes upAppear {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 }
 
 .list-item:last-child {

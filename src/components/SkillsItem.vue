@@ -19,6 +19,7 @@ export default {
   &__item {
     position: relative;
     cursor: pointer;
+    transform: scale(0);
 
     &::after {
       content: attr(data-title);
@@ -38,7 +39,21 @@ export default {
     }
   }
 
+  @for $i from 1 through 14 {
+    &__item:nth-child(#{$i}) {
+      transition: all 0.8s ease (0.2s * $i);
+    }
+  }
+
   &__logo {
+  }
+}
+
+.skills.active {
+  @for $i from 1 through 14 {
+    .skills__item:nth-child(#{$i}) {
+      transform: scale(1);
+    }
   }
 }
 </style>
